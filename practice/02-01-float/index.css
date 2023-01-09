@@ -1,0 +1,15 @@
+.float-box {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    /* 폰트 색상 변경 */
+    color: #ffffff;
+    padding: 30px;
+    box-sizing: border-box;
+    float: right;
+}
+
+p {
+    font-size: 16px;
+    clear: right;
+}

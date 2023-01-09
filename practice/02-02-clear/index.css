@@ -1,0 +1,35 @@
+/* box1, box2에 겹치는 요소가 많으므로 class 하나 더만들어서
+줄이기 코드 */
+
+.box {
+    width: 300px;
+    padding: 20px;
+    box-sizing: border-box;
+} 
+
+.box1 {
+    height: 400px;
+    background-color: red;
+    float: left;
+}
+
+.box2 {
+    height: 200px;
+    background-color: blue;
+    float: right;
+}
+
+/* .box3 {
+    clear: both;
+} */
+
+/* 오늘의 집 홈페이지 맨위에 들어가있는 모든 요소들은
+block요소이다 float 레이아웃을 이용해서 이 페이지를 만들경우
+전부다 float를 이용해서 땡겨줘야함 그런데 모든 요소에다가 일일이 
+clear both를 적용하는것은 헷갈리는 일이다. 그래서 위에다
+내용이 없는 상자를 만들고 clearfix라는 빈상자를 만들고 아래 속성을 부여한다. 
+그러면 레이아웃은 정상적으로 노출한다. */
+.clearfix {
+    clear: both;
+}
+/* clearfix라는 이름을 사용하는 것은 개발자들 사이의 관례 */

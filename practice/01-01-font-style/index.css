@@ -1,0 +1,21 @@
+.title {
+    color: red;
+}
+
+.box1 .title {
+    color: yellow;
+}
+
+.contents {
+    font-size: 28px;
+    /* font style : normal, italic을 가장 많이사용한다고 함. */
+    font-style: italic;
+    /* 밑줄을 친다. */
+    text-decoration: underline;
+    /* 굵기 weight을 주지 않는것은 보통 400정도임 */
+    font-weight: 600;
+}
+
+.title#headline {
+    color: violet;
+}

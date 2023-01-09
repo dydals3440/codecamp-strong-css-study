@@ -1,0 +1,42 @@
+.container {
+    background-color: gray;
+}
+
+.box1 {
+    width: 200px;
+    height: 200px;
+    padding: 50px;
+    background-color: white;
+    border: 3px solid blue;
+    box-sizing: content-box;
+}
+
+
+.box2 {
+    width: 200px;
+    height: 200px;
+    /* border가 사이즈의 기준 padding을 주면 박스의 사이즈는 변하지 않고 그 안에 contents 영역이 100px정도로 줄어듬.*/
+    padding: 50px;
+    background-color: white;
+    border: 3px solid red;
+    box-sizing: border-box;
+}
+
+
+.box3 {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border: 3px solid green;
+    /* 기본 box-sizing의 기본 값은 content-box 라는 것을 알게 되었다. */
+    padding: 50px;
+}
+
+/* span 태그 */
+.text {
+    width: 200px;
+    height: 50px;
+    /* 이를 통해 가로값과 세로값은 텍스트에 적용이 되지 않는 것을 알 수 있다. inline 요소이다. */
+    background-color: red;
+}
+
