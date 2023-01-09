@@ -1,0 +1,161 @@
+/* box-sizing  전체의 모든 요소를 선택해서 border-box로 변경해야함. */
+* {
+    box-sizing: border-box;
+    /* 어떠한 margin, border도 주지 않았는데 글씨가 살짝 떨어져있음 그래서 제거하고 가자.*/
+    /* 기본 margin, padding 제거 */
+    margin: 0;
+    padding: 0;
+}
+
+/* flex 레이아웃을 이용한 헤더 만들기 */
+.header {
+    /* width: 100%; 기본적으로 100%이기에 굳이 x */
+    height: 80px;
+    display: flex;
+    /* 기본 flex-direction은 row이다 */
+    justify-content: center;
+    /* 즉 align items는 flex-direction과 반대되는 세로축 정렬이다. */
+    align-items: center;
+    border-bottom: 1px solid gray;
+}
+
+.header-inner {
+    width: 900px;
+    height: 100%;
+    /* 자세히 보면 header-inner 안에 로고, 메뉴, 유저이미지 이렇게 있는데 이것들이 
+    화면 상으로는 세로로 나열되어 있지만 실제로는 가로로 우리가 나열하고 싶기에 flex-layout으로 정리해준다. */
+    display: flex;
+    /* flex-direction 기본값은 Row이지만 개발자들이 잘 소통하기 위해 적어주자! */
+    flex-direction: row;
+    /* 로고랑 유저 이미지르 좌우 끝에 벌려야 하므로 */
+    justify-content: space-between;
+    /* 세로축은 중앙에 배치하고 싶으므로 */
+    align-items: center;
+}
+
+.logo {
+    width: 100px;
+}
+
+.logo h1 a {
+    text-decoration: none;
+    color: orange
+}
+
+.menu__ul {
+    /* 어제/오늘/내일의 일기가 세로 방향으로 정렬되있음 이를 가로정렬로 변경 */
+    display: flex;
+    flex-direction: row;
+}
+
+.menu__ul li {
+    /* ul의 점 삭제하기 */
+    list-style: none;
+}
+
+.menu__ul li a{
+    /* a태그가 inline 태그이기에 위아래가 안바뀜 block으로 변경 */
+    display: block;
+    /* 10px을 안줘도 별로 차이가 없다 하지만 margin을 주면 메뉴를 눌렀을떄 선택범위가 넓어지므로 UI에 신경을 쓴 모습이다. */
+    margin: 10px 20px; 
+    text-decoration: none;
+    color: #000000;
+}
+
+.user {
+    width: 100px;
+}
+
+
+
+
+
+
+
+.container {
+    /* 흰색 박스를 가운데 정렬 */
+    background-color: #eeeeee;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* 위 아래 여백 주기 이미 좌우는 여백있기에 안줘도됨 */
+    padding: 50px 0;
+}
+
+.wrapper {
+    width: 620px;
+    /* padding을 줘서 안에 컨텐츠부분좌우 상하에 여유줌 */
+    padding: 40px 30px;
+    /* 모서리 둥글게 */
+    border-radius: 10px;
+    background-color: white;
+}
+
+.wrapper__head {
+    /* 적절한 여백을 가진 중앙 점선 만들기 */
+    border-bottom: 1px dashed gray;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.wrapper__head__title {
+    font-size: 32px;
+    background-color: orange;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    margin-bottom:  10px;
+}
+
+.wrapper__head__sub-title {
+    /* 대부분 웹사이트의 표준 폰트 사이즈는 16px ~ 18px 을 기본으로 잡음 */
+    font-size: 18px;
+    padding: 10px 0;
+}
+
+#point {
+    color: orange;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: underline;
+    /* span 태그는 inline 요소이기 떄문에 margin이 적용이 안됨 */
+    margin-top: 15px;
+    /* display를 변경해서 margin 먹이기 */
+    display: block;
+}
+
+.wrapper__body {
+    border: 1px solid #dddddd;
+    padding: 20px 30px;
+}
+
+.diary-title {
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #f4f4f4;
+    margin-bottom: 20px;
+}
+
+.kimchi {
+    color: red;
+    font-weight: 600;
+}
+
+.egg {
+    color: orange;
+    font-weight: 600;
+}
+
+.highlight {
+    font-size: 22px;
+    color: blue;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.diary-date {
+    color: #919191;
+    font-size: 14px;
+    text-align: right;
+}
