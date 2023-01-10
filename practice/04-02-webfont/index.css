@@ -1,0 +1,10 @@
+/* 여러개 글꼴을 사용하고 싶으면 여러개를 import 하면 됩니다. */
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+div {
+    font-family: 'Jua', sans-serif
+}
