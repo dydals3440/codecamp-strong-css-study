@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+}
+
+/* 박스에 그라데이션을 주는 작업 */
+.box {
+    width: 600px;
+    height: 120px;
+    /* 그라디언트는 background-image로 */
+    /* 아래에서 위로 주황색과 빨간색으로 변환 */
+    background-image: linear-gradient(to top, orange, red);
+    /* 텍스트 가운데 정렬 해주기 */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.box span {
+    font-size: 36px;
+    color: white;
+    font-weight: 600;
+    /* 단축속성 활용 부드럽게 글씨가 위로 올라가는 작업 */
+    transition: transform 0.4s ease-in-out;
+}
+
+.box #text2 {
+    /* ease-in-out 뒤에 delay를 줘야함 첫글자는 x */
+    transition: transform 0.4s ease-in-out 0.1s;
+}
+
+.box #text2 {
+    /* ease-in-out 뒤에 delay를 줘야함 첫글자는 x */
+    transition: transform 0.4s ease-in-out 0.1s;
+}
+
+.box #text3 {
+    /* ease-in-out 뒤에 delay를 줘야함 첫글자는 x */
+    transition: transform 0.4s ease-in-out 0.2s;
+}
+
+.box #text4 {
+    /* ease-in-out 뒤에 delay를 줘야함 첫글자는 x */
+    transition: transform 0.4s ease-in-out 0.3s;
+}
+
+.box #text5 {
+    /* ease-in-out 뒤에 delay를 줘야함 첫글자는 x */
+    transition: transform 0.4s ease-in-out 0.4s;
+}
+
+.box #text6 {
+    /* ease-in-out 뒤에 delay를 줘야함 첫글자는 x */
+    transition: transform 0.4s ease-in-out 0.5s;
+}
+
+.box #text7 {
+    /* ease-in-out 뒤에 delay를 줘야함 첫글자는 x */
+    transition: transform 0.4s ease-in-out 0.6s;
+}
+
+.box #text8 {
+    /* ease-in-out 뒤에 delay를 줘야함 첫글자는 x */
+    transition: transform 0.4s ease-in-out 0.7s;
+}
+
+.box #text9 {
+    /* ease-in-out 뒤에 delay를 줘야함 첫글자는 x */
+    transition: transform 0.4s ease-in-out 0.8s;
+}
+
+/* 박스에 마우스를 댔을때 텍스트가 물결치는 효과 내기 */
+.box:hover span {
+    /* 위로만 움직이기때문에 음수가 위로 올라감 */
+    transform: translateY(-20px);
+}
