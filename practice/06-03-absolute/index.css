@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    border: 3px solid red;
+    padding: 10px;
+    position: relative;
+
+}
+
+.wrapper {
+    border: 3px solid blue;
+    padding: 10px;
+    position: relative;
+}
+
+/* 실질적으로 absolute 적용할 곳 */
+.item {
+    background-color: orange;
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
