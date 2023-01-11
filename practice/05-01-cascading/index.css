@@ -1,0 +1,17 @@
+* {
+    background-color: yellow;
+    box-sizing: border-box;
+}
+
+div {
+    background-color: aqua;
+}
+
+.text-class {
+    background-color: blue;
+}
+
+/* 가장 우선순위인 id의 색상이 적용된다. */
+#text-id {
+    background-color: red;
+}
