@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    /* 가로축 기준 균일한 여백을 두고 배치 */
+    justify-content: space-between;
+    /* 세로축 기준 위에 쫙달라붙게함 */
+    align-items: flex-start
+
+}
+
+.sidebar {
+    /* 사이즈가 늘어나도 줄어들어도 170px 유지 */
+    width: 170px;
+    background-color: orange;
+    padding: 5px 15px;
+}
+
+.sidebar ul {
+    width: 100%;
+    padding: 0;
+}
+
+.sidebar ul li {
+    list-style: none;
+    /* 메뉴1, 2, 3, 4에 좌우 padding이 0인데 그래도 글씨가 떨어져있다.
+    수정하느 방법은 sidebar_ul의 padding을 지우는 것이다. */
+    padding: 5px 0;
+    color: #ffffff;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+}
+
+
+
+.contents {
+    /* 뷰포트를 늘려도 화면을 꽉채움 170px은 사이드박스의 크기 */
+    width: calc(100% - 170px);
+    display: flex;
+    flex-direction: row;
+    /* 우리는 한줄에 4개의 아이템이 들어갈텐데 아이템들 사이에 각각의 여백이 있었으면 좋겠다. */
+    justify-content: space-between;
+    align-items: flex-start;
+    /* flex item 들이 한줄에서 꾸겨지게 나오는걸 수정하는 코드 */
+    flex-wrap: wrap;
+    padding: 0 10px;
+
+}
+
+.item {
+    /* 모든 아이템에 동일한 사이즈 지정 한 박스에 4개의 아이템을 넣을 것이므로 */
+    width: 24%; /* 25%로 하면 여백없이 꽉 참*/
+    height: 180px;
+    /* 이렇게만 하면 박스가 아래쪽으로 쭉쭉 줄바꿈이 되어서 넘어감 */
+    background-image: url("../img/dochi.jpg");
+    margin-bottom: 10px;
+    /* 이미지 잘리는 것을 막기 */
+    background-size: cover;
+
+}
+
