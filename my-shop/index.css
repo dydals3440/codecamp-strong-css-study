@@ -1,0 +1,410 @@
+@import url("<https://fonts.googleapis.com/css2?family=Jua&display=swap>");
+
+* {
+    box-sizing: border-box;
+    font-family: "Noto Sans KR", "돋움", "sans-serif";
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* mainBanner */
+.mainBanner {
+    width: 100%;
+    height: 280px;
+    background-image: url("./img/banner.jpg");
+    /* 이미지가 영역에 꽉 맞게 예쁘게 채워지게 하는 코드 */
+    background-size: cover;
+    /* 배너 안 글씨 가운데 정렬 */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.mainBanner .text {
+    font-size: 42px;
+    font-weight: 700;
+    color: white;
+    /* 텍스트에 그림자넣기(x축, y축, 흐릿해지는 정도, 색상) */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    animation: titleText 1s ease-in-out;
+}
+
+@keyframes titleText {
+    /* 위로 올라갔다가 통튀기는듯한 연출 제목이 */
+    0% {
+        /* 밑으로 70px 떨군데서 시작 */
+        transform: translateY(70px);
+        opacity: 0;
+    }
+        /* 다올라갈떄쯤 위로 조금 올림 */
+    92% {
+        transform: translateY(-10px);
+    }
+        /* 다시 떨궈서 원래위치로 그래야 통튀기는 느낌 */
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+/* container 또한 중앙 정렬이다. */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* 모든 아이템들이 상단에 붙기를 원함 */
+    align-items: flex-start;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1320px;
+    /* sidebar, itemWrap 위치잡기 */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 10px;
+}
+
+/* sidebar 영역 */
+.sidebar {
+    /* 100%되게 규격 고정 */
+    width: 170px;
+}
+
+.mainMenu {
+    background-color: orange;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+
+.mainMenu ul {
+    display: block;
+    /* width: 100%;
+    height: auto; */
+    padding: 0;
+}
+
+.mainMenu li {
+    display: block;
+    list-style: none;
+}
+
+.mainMenu ul li a {
+    display: block;
+    padding: 10px;
+    /* 기본적으로 ul과, li, a 태그는 inline이라 빨간선의 박스가 겹쳐진다 그러므로 셋다 block으로 변경
+    border: 1px solid red; */
+    color: white;
+    border-radius: 20px;
+}
+
+/* 상품 등록 버튼 */
+.writeBtnBox {
+    margin-top: 10px;
+}
+
+.writeBtn {
+    width: 100%;
+    background-color: black;
+    border: 1px solid black;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-align: left;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.writeBtn .arrow {
+    /* inline 요소에는 적용되지 않는 속성들이 여러가지 있다. 
+    여러가지 적용을 해보면서 적용되는걸 찾아가자 */
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* itemWrap 영역입니다. */
+
+.itemWrap {
+    display: flex;
+    flex-direction: row;
+    /* 이렇게 해야 itemWrap과 sidebar가 합쳤을떄 100% */
+    width: calc(100% - 170px);
+    /* item을 여러개 배치하는 작업 */
+    justify-content: space-between;
+    align-items: flex-start;
+    /* 여러개의 컨텐츠들을 자연스럽게 다음줄로 넘어가게 하는것 한줄에 4개씩 이미지를 출력하고싶을때 (여러개가 아닌) */
+    flex-wrap: wrap;
+    padding-left: 15px;
+}
+
+/* 이미지 박스와 텍스트 박스가 겹쳐지도록 만드는 작업 */
+.item {
+    /* 한 줄에 4개 아이템 넣기 그냥 25%하면 꽉차서 답답하게 보이니 calc()활용 */
+    width: calc(25% - 7px);
+    /* 가로값과 세로값을 고정시킴 */
+    aspect-ratio: 6 / 5;
+    /* height: 320px; aspect-ratio해줌으로 필요 없음 */
+    /* overflow: hidden; item의 박스사이즈가 변경되지 않은 것 처럼 보이지만
+    실제로는 줄었는데 이미지크기가 너무 커서 확인을 못할 뿐이다. overflow: hidden을 통해 확인해볼 수 있다. */
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.imgBox {
+    /* item이라는 요소의 크기가 변경되면 그대로 사이즈를 따라간다 */
+    width: 100%;
+    height: 100%;
+    /* z-index: 1; img박스는 가장 아래에 깔려있어야함 기본값 auto라 굳이 안해도됨 */
+}
+
+.imgBox img {
+    width: 100%;
+    height: 100%;
+    /* 강제로 사이즈를 맞추느라 이미지가 좀 흐려짐 */
+    object-fit: cover; /* object-fit 통해 해결 */
+}
+
+.textBox {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* 위로 딱붙은 글씨를 아래쪽으로 하는 작업 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 20px;
+    /* 지금 요소가 3개 겹쳐서 글씨가 흐리게 보임 잘보이게 */
+    z-index: 3;
+}
+
+.textBox p {
+    color: white;
+    /* 위에다 5px 양쪽 0 아래 0 */
+    margin: 5px 0 0;
+}
+
+.textBox__name {
+    font-size: 22px;
+    font-weight: 500;
+    /* 나중에 hover 했을떄 글씨가 보이게 만들어줄꺼라 일단 투명도 0 안보이게 설정 */
+    opacity: 0;
+    /* 아래에 있다가 위로 올라오는 효과 부여 */
+    transform: translateY(50px);
+}
+
+.textBox__price {
+    font-size: 16px;
+    font-weight: 400;
+    /* 나중에 hover 했을떄 글씨가 보이게 만들어줄꺼라 일단 투명도 0 안보이게 설정 */
+    opacity: 0;
+    /* 아래에 있다가 위로 올라오는 효과 부여 */
+    transform: translateY(50px);
+}
+
+/* 상품 이미지에 hover 했을떄 blur 효과 내기 */
+.item:after {
+    /* 가상 요소 선택자를 사용할때는 실제로 컨텐츠가 없어도 빈컨텐츠를 선언해야한다. */
+    content: "";
+    display: block;
+    background-color: rgba(0,0,0,0.2);
+    width: 100%;
+    height: 100%;
+    /* 상품파일 아래에 회색 상자가 만들어졌다 그 상자를 상품파일 위로 겹치게 만들기 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+}
+
+
+/* 모든 선택자에 transition 한방에 주기 */
+.item:after,
+.item .imgBox img,
+.item .textBox__name,
+.item .textBox__price {
+    transition: all 0.4s ease-in-out;
+}
+
+.item .textBox__price {
+    transition: all 0.4s ease-in-out 0.15s;
+}
+
+@media screen and (max-width: 757px) {
+    /* mobile */
+    .mainBanner {
+        height: 160px;
+        margin-bottom: 0;
+    }
+
+    .mainBanner .text {
+        font-size: 26px;
+    }
+
+    .wrapper {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .mainMenu  {
+        padding: 0;
+        border-radius: 0;
+    }
+
+    /* siebar 모바일 환경 가로 정렬 */
+    .mainMenu ul {
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mainMenu ul li a {
+        font-size: 14px;
+        padding: 12px 10px;
+    }
+
+    .writeBtnBox {
+        display: none;
+    }
+    
+    .itemWrap {
+        width: 100%;
+        margin-top: 12px;
+    }
+
+    .item {
+        /* 아이탬 배열 조절 부모가 100이니 모바일 환경 2개씩 */
+        width: calc(50% - 7px);
+        /* textbox를 relative해도글씨가 안나옴 이전에 우리가 hidden해줘서 영역밖으로 나가버리면 안보이는거임. */
+        overflow: visible;
+        border: 1px solid #dddddd;
+    }
+
+    .textBox {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .textBox p {
+        color: black;
+    }
+    
+    .textBox__name {
+        font-size: 18px;
+        font-weight: 500;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .textBox__price {
+        font-size: 12px;
+        font-weight: 400;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* tablet */
+    .item {
+        /* 아이탬 배열 조절 부모가 100이니 모바일 환경 2개씩 */
+        width: calc(50% - 7px);
+        /* textbox를 relative해도글씨가 안나옴 이전에 우리가 hidden해줘서 영역밖으로 나가버리면 안보이는거임. */
+        overflow: visible;
+        border: 1px solid #dddddd;
+    }
+
+    .textBox {
+        height: auto;
+        position: relative;
+    }
+
+    .textBox p {
+        color: black;
+    }
+    
+    .textBox__name {
+        font-size: 18px;
+        font-weight: 500;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .textBox__price {
+        font-size: 12px;
+        font-weight: 400;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 모든 종료우 hover 효과는 pc에서만 되게 설정 */
+@media screen and (min-width: 1024px) {
+    /* 메뉴에 마우스를 가져다 댔을떄 ui 변경 */
+    .mainMenu ul li a:hover {
+        background-color: rgb(255, 145, 0);
+        padding-left: 20px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .writeBtn:hover {
+        background-color: #ffffff;
+        color: #333333;
+    }
+
+    .writeBtn:hover .arrow {
+        transform: translateX(50px);
+        padding-left: 10px;
+    }
+
+    /* item이 hover됐을떄 after라는 가상요소 선택자에 어떤것을 부여해주겠다 라는 의미 */
+    .item:hover:after {
+        /* 약간 어두운 검은색 박스가 보여짐 */
+        opacity: 1;
+    }
+
+    .item:hover .imgBox img {
+        transform: scale(1.1);
+        filter: blur(3px);
+    }
+
+    .item:hover .textBox__name {
+        opacity: 1;
+        /* 원래 글씨가 있던 위치 */
+        transform: translateY(0);
+    }
+
+    .item:hover .textBox__price {
+        opacity: 1;
+        /* 원래 글씨가 있던 위치 */
+        transform: translateY(0);
+    }
+}
