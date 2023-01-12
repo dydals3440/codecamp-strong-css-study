@@ -32,12 +32,15 @@ html, body {
 @keyframes titleText {
     /* 위로 올라갔다가 통튀기는듯한 연출 제목이 */
     0% {
+        /* 밑으로 70px 떨군데서 시작 */
         transform: translateY(70px);
         opacity: 0;
     }
+        /* 다올라갈떄쯤 위로 조금 올림 */
     92% {
         transform: translateY(-10px);
     }
+        /* 다시 떨궈서 원래위치로 그래야 통튀기는 느낌 */
     100% {
         transform: translateY(0);
         opacity: 1;
