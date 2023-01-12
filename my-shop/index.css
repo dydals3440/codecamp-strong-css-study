@@ -1,6 +1,9 @@
 @import url("<https://fonts.googleapis.com/css2?family=Jua&display=swap>");
 
 * {
+    /* box-sizing: border라고해서 hover시 금액이 나오지 않았다. 이부분을 참고하자.
+    border-box는 박스의 크기가 달라지지 않는다. 근데 contents-box는 내가 설정한 영역보다 padding, margin 등을
+    주었을떄 조금더 커져서 내가 원하는 css가 안나올 수도 있다. */
     box-sizing: border-box;
     font-family: "Noto Sans KR", "돋움", "sans-serif";
 }
