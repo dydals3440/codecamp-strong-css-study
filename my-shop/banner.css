@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.mainBanner {
+    width: 100%;
+    height: 280px;
+    background-image: url("./img/banner.jpg");
+    /* 이미지가 영역에 꽉 맞게 예쁘게 채워지게 하는 코드 */
+    background-size: cover;
+    /* 배너 안 글씨 가운데 정렬 */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainBanner .text {
+    font-size: 42px;
+    font-weight: 700;
+    color: white;
+    /* 텍스트에 그림자넣기(x축, y축, 흐릿해지는 정도, 색상) */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    animation: titleText 1s ease-in-out;
+}
+
+@keyframes titleText {
+    /* 위로 올라갔다가 통튀기는듯한 연출 제목이 */
+    0% {
+        transform: translateY(70px);
+        opacity: 0;
+    }
+    92% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

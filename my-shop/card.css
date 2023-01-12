@@ -30,6 +30,7 @@ html, body {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
+    margin-bottom: 15px;
 }
 
 .imgBox {
@@ -118,11 +119,13 @@ html, body {
 
 .item:hover .textBox__name {
     opacity: 1;
+    /* 원래 글씨가 있던 위치 */
     transform: translateY(0);
 }
 
 .item:hover .textBox__price {
     opacity: 1;
+    /* 원래 글씨가 있던 위치 */
     transform: translateY(0);
 }
 
